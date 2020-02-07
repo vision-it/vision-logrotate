@@ -1,0 +1,7 @@
+/vision/data/traefik/logs/access.log {
+  rotate 6
+  size 10M
+  compress
+  missingok
+  notifempty
+}
