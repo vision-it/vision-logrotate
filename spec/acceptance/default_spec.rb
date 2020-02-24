@@ -24,6 +24,7 @@ describe 'vision_logrotate' do
       it { should be_mode 644 }
       it { should be_owned_by 'root' }
       its(:content) { is_expected.to match 'size 10M' }
+      its(:content) { is_expected.to match 'sed' }
     end
   end
 end
