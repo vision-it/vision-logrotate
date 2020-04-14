@@ -1,8 +1,10 @@
 # Class: vision_logrotate
 # ===========================
 #
-# @example
-# contain ::vision_logrotate
+# Profile to manage custom logrotate config
+#
+# Parameters
+# ----------
 #
 
 class vision_logrotate {

@@ -2,8 +2,6 @@
 
 [![Build Status](https://travis-ci.org/vision-it/vision-logrotate.svg?branch=development)](https://travis-ci.org/vision-it/vision-logrotate)
 
-## Parameter
-
 ## Usage
 
 Include in the *Puppetfile*:
