@@ -21,4 +21,12 @@ class vision_logrotate {
     content => file('vision_logrotate/traefik'),
   }
 
+  file { '/etc/logrotate.d/firewall':
+    ensure  => present,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644',
+    content => file('vision_logrotate/firewall'),
+  }
+
 }
