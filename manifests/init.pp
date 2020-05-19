@@ -29,4 +29,12 @@ class vision_logrotate {
     content => file('vision_logrotate/firewall'),
   }
 
+  file { '/etc/logrotate.d/applications':
+    ensure  => present,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644',
+    content => file('vision_logrotate/applications'),
+  }
+
 }

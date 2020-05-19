@@ -1,0 +1,11 @@
+/vision/data/intranet/storage/logs/*.log
+/vision/data/personenpflege/storage/logs/*.log
+/vision/data/webshop/logs/*.log
+{
+  rotate 6
+  weekly
+  compress
+  nocreate
+  missingok
+  notifempty
+}

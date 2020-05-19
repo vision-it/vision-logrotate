@@ -25,6 +25,12 @@ describe 'vision_logrotate' do
       it { should be_owned_by 'root' }
       its(:content) { is_expected.to match 'weekly' }
     end
+    describe file('/etc/logrotate.d/applications') do
+      it { is_expected.to exist }
+      it { should be_mode 644 }
+      it { should be_owned_by 'root' }
+      its(:content) { is_expected.to match 'weekly' }
+    end
     describe file('/etc/logrotate.d/traefik') do
       it { is_expected.to exist }
       it { should be_mode 644 }
