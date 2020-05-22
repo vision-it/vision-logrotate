@@ -4,6 +4,7 @@
 {
   rotate 6
   weekly
+  ifempty
   compress
   nocreate
   missingok
