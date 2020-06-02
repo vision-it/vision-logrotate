@@ -13,28 +13,20 @@ class vision_logrotate {
     ensure => present,
   }
 
-  file { '/etc/logrotate.d/traefik':
+  file { '/etc/logrotate.conf':
     ensure  => present,
-    owner   => 'root',
-    group   => 'root',
     mode    => '0644',
-    content => file('vision_logrotate/traefik'),
+    content => file('vision_logrotate/logrotate.conf'),
+    require => Package['logrotate'],
   }
 
-  file { '/etc/logrotate.d/firewall':
-    ensure  => present,
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0644',
-    content => file('vision_logrotate/firewall'),
-  }
-
-  file { '/etc/logrotate.d/applications':
-    ensure  => present,
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0644',
-    content => file('vision_logrotate/applications'),
+  file { '/etc/logrotate.custom.d':
+    ensure  => directory,
+    recurse => true,
+    purge   => true,
+    mode    => '1755',
+    source  => 'puppet:///modules/vision_logrotate/logrotate.d/',
+    require => Package['logrotate'],
   }
 
 }
