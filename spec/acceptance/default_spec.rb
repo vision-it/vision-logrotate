@@ -19,21 +19,23 @@ describe 'vision_logrotate' do
   end
 
   context 'config deployed' do
-    describe file('/etc/logrotate.d/firewall') do
+    describe file('/etc/logrotate.conf') do
       it { is_expected.to exist }
       it { should be_mode 644 }
+      its(:content) { is_expected.to match 'Puppet' }
+    end
+    describe file('/etc/logrotate.custom.d/firewall') do
+      it { is_expected.to exist }
       it { should be_owned_by 'root' }
       its(:content) { is_expected.to match 'weekly' }
     end
-    describe file('/etc/logrotate.d/applications') do
+    describe file('/etc/logrotate.custom.d/applications') do
       it { is_expected.to exist }
-      it { should be_mode 644 }
       it { should be_owned_by 'root' }
       its(:content) { is_expected.to match 'weekly' }
     end
-    describe file('/etc/logrotate.d/traefik') do
+    describe file('/etc/logrotate.custom.d/traefik') do
       it { is_expected.to exist }
-      it { should be_mode 644 }
       it { should be_owned_by 'root' }
       its(:content) { is_expected.to match 'size 10M' }
       its(:content) { is_expected.to match 'sed' }
