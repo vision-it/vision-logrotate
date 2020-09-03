@@ -1,6 +1,6 @@
 # vision-logrotate
 
-[![Build Status](https://travis-ci.org/vision-it/vision-logrotate.svg?branch=development)](https://travis-ci.org/vision-it/vision-logrotate)
+[![Build Status](https://travis-ci.org/vision-it/vision-logrotate.svg?branch=production)](https://travis-ci.org/vision-it/vision-logrotate)
 
 ## Usage
 
@@ -17,4 +17,3 @@ Include in a role/profile:
 ```puppet
 contain ::vision_logrotate
 ```
-
